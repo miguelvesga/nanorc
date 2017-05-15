@@ -1,0 +1,35 @@
+syntax "gas" "\.(S)$"
+magic "[Aa]ssembl(y|er)"
+
+color brightblack "[\.a-zA-Z_][\.a-zA-Z0-9_]*"
+
+color magenta "\<[A-Z_]{2,}\>"
+
+color green "(\.section)\s+(\.[a-z]+?)"
+
+color brightgreen "\.(code16|code32|code64)(gcc)?\>"
+color brightgreen "\.(align|extern|file|globl|global|hidden|org|section|size|type|weak)\>"
+color brightblue "\.(ascii|asciz|byte|double|fill|float|hword|int|long|set|short|single|skip|struct|word)\>"
+
+color brightblue "\<(add|and|dec|div|idiv|imul|in|inc|lea|mov|mul|or|out|pop|push|sub|xor)(b|l|q|w)?\>"
+color brightblue "\<(stos)(b|d|q|w)?\>"
+color brightblue "\<(lods)(b|d|q|w)?\>"
+color brightblue "\<(call|cli|cmp|cpuid|hlt|int|iret|leave|lgdt|lidt|lldt|nopr|popa|pusha|rdmsr|rep|ret|sgdt|sidt|sldt|sti|wrmsr)\>"
+color brightblue "\<(jmp|je|jne|jg|jge|ja|jae|jl|jle|jb|jbe|jo|jno|jz|jnz|js|jns)\>"
+
+color brightcyan "%(r|e)?(ax|bx|cx|dx|si|di|sp|bp|ip)\>"
+color brightcyan "%(a|b|c|d)(h|l)\>"
+color brightcyan "%(c|s|d|e|f|g)(s)\>"
+
+color yellow "@([a-z]+?)"
+color yellow "\<([0-9]+|0x[0-9a-fA-F]+)\>"
+color yellow ""(\\.|[^"])*""
+
+color brightblack "[\.a-zA-Z_][\.a-zA-Z0-9_]*:"
+color white ":"
+
+color white "//.*"
+color white "#.*"
+color white start="/\*" end="\*/"
+
+color ,green "[[:space:]]+$"
