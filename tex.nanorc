@@ -1,0 +1,12 @@
+syntax "TeX" "\.(tex)$"
+
+color brightwhite "."
+
+color brightmagenta "\\[A-Za-z]+\>"
+color brightblack "(\[|\]|\{|\})"
+
+# color brightyellow "\<([0-9]+)\>"
+color brightyellow "\$(.*?)\$"
+
+color brightblack "%.*"
+color ,green "[[:space:]]+$"
