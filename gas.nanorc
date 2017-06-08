@@ -1,35 +1,85 @@
 syntax "gas" "\.(S)$"
-magic "[Aa]ssembl(y|er)"
+magic "[Aa]ssembl(y|er)[bswlqt]?\>"
 
-color brightblack "[\.a-zA-Z_][\.a-zA-Z0-9_]*"
+color brightwhite "[\.a-zA-Z_][\.a-zA-Z0-9_]*"
 
-color magenta "\<[A-Z_]{2,}\>"
+color brightred "\<[A-Z_]{2,}\>"
 
-color green "(\.section)\s+(\.[a-z]+?)"
+# 8086
+icolor brightmagenta "\<(aaa|aad|aam|aas|adc|add|and|call|cbw|clc|cld|cli|cmc|cmp)[bswlqt]?\>"
+icolor brightmagenta "\<(cmpsb|cmpsw|cwd|daa|das|dec|div|esc|hlt|idiv|imul|in|inc)[bswlqt]?\>"
+icolor brightmagenta "\<(int|into|iret)[bswlqt]?\>"
+icolor brightmagenta "\<(j(a|ae|b|be|c|e|g|ge|l|le|na|nae|nb|nbe|nc|ne|ng|nge|nl|nle|no|np|ns|nz|o|p|pe|po|s|z)[bswlqt]?\>"
+icolor brightmagenta "\<(jcxz|jmp|lahf|lds|lea|les|lock|lodsb|lodsw)[bswlqt]?\>"
+icolor brightmagenta "\<(loop|loope|loopne|loopnz|loopz|mov|movsb|movsw|mul|neg|nop)[bswlqt]?\>"
+icolor brightmagenta "\<(not|or|out|pop|popf|push|pushf|rcl|rcr|rep|repe|repne|repnz)[bswlqt]?\>"
+icolor brightmagenta "\<(repz|ret|retn|retf|rol|ror|sahf|sal|sar|sbb|scasb|scasw|shl)[bswlqt]?\>"
+icolor brightmagenta "\<(shr|stc|std|sti|stosb|stosw|sub|test|wait|xchg|xlat|xor)[bswlqt]?\>"
 
-color brightgreen "\.(code16|code32|code64)(gcc)?\>"
-color brightgreen "\.(align|extern|file|globl|global|hidden|org|section|size|type|weak)\>"
-color brightblue "\.(ascii|asciz|byte|double|fill|float|hword|int|long|set|short|single|skip|struct|word)\>"
+# 80186
+icolor brightmagenta "\<(bound|enter|ins|leave|outs|popa|pusha)[bswlqt]?\>"
 
-color brightblue "\<(add|and|dec|div|idiv|imul|in|inc|lea|mov|mul|or|out|pop|push|sub|xor)(b|l|q|w)?\>"
-color brightblue "\<(stos)(b|d|q|w)?\>"
-color brightblue "\<(lods)(b|d|q|w)?\>"
-color brightblue "\<(call|cli|cmp|cpuid|hlt|int|iret|leave|lgdt|lidt|lldt|nopr|popa|pusha|rdmsr|rep|ret|sgdt|sidt|sldt|sti|wrmsr)\>"
-color brightblue "\<(jmp|je|jne|jg|jge|ja|jae|jl|jle|jb|jbe|jo|jno|jz|jnz|js|jns)\>"
+# 80286
+icolor brightmagenta "\<(arpl|clts|lar|lgdt|lidt|lldt|lmsw|loadall|lsl|ltr|sgdt)[bswlqt]?\>"
+icolor brightmagenta "\<(sidt|sldt|smsw|str|verr|verw)[bswlqt]?\>"
 
-color brightcyan "%(r|e)?(ax|bx|cx|dx|si|di|sp|bp|ip)\>"
-color brightcyan "%(a|b|c|d)(h|l)\>"
-color brightcyan "%(c|s|d|e|f|g)(s)\>"
+# 80386
+icolor brightmagenta "\<(bsf|bsr|bt|btc|btr|bts|cdq|cmpsd|cwde|insd|iret[df]|jecxz)[bswlqt]?\>"
+icolor brightmagenta "\<(lfs|lgs|lss|lodsd|loop[wd]|loope[wd]|loopne[wd]|loopnz[wd]|loopz[wd])[bswlqt]?\>"
+icolor brightmagenta "\<(movsd|movsx|movzx|outsd|popad|popfd|pushad|pushfd|scasd)[bswlqt]?\>"
+icolor brightmagenta "\<(set(a|ae|b|be|c|e|g|ge|l|le|na|nae|nb|nbe|nc|ne|ng|nge|nl|nle|no|np|ns|nz|o|p|pe|po|s|z)[bswlqt]?\>"
+icolor brightmagenta "\<(shld|shrd|stosd)[bswlqt]?\>"
 
-color yellow "@([a-z]+?)"
-color yellow "\<([0-9]+|0x[0-9a-fA-F]+)\>"
-color yellow ""(\\.|[^"])*""
+# 80486
+icolor brightmagenta "\<(bswap|cmpxchg|invd|invlpg|wbinvd|xadd)[bswlqt]?\>"
 
-color brightblack "[\.a-zA-Z_][\.a-zA-Z0-9_]*:"
-color white ":"
+# Pentium
+icolor brightmagenta "\<(cpuid|cmpxchg8b|rdmsr|rdtsc|wrmsr|rsm)[bswlqt]?\>"
 
-color white "//.*"
-color white "#.*"
-color white start="/\*" end="\*/"
+# Pentium MMX
+icolor brightmagenta "\<(rdpmc)[bswlqt]?\>"
+
+# K6
+icolor brightmagenta "\<(syscall|sysret)[bswlqt]?\>"
+
+# Pentium Pro
+icolor brightmagenta "\<(cmov(a|ae|b|be|c|e|g|ge|l|le|na|nae|nb|nbe|nc|ne|ng|nge|nl|nle|no|np|ns|nz|o|p|pe|po|s|z)[bswlqt]?\>"
+icolor brightmagenta "\<(ud2)[bswlqt]?\>"
+
+# Pentium II
+icolor brightmagenta "\<(sysenter|sysexit)[bswlqt]?\>"
+
+# SSE
+icolor brightmagenta "\<(maskmovq|movntps|movntq|prefetch[012]|prefetchnta|sfence)[bswlqt]?\>"
+
+# SSE2
+icolor brightmagenta "\<(clflush|lfence|maskmovdqu|mfence|movntdq|movnti|movntpd|pause)[bswlqt]?\>"
+
+# SSE3
+icolor brightmagenta "\<(monitor|mwait)[bswlqt]?\>"
+
+# x86-64
+icolor brightmagenta "\<(cdqe|cqo|cmpsq|cmpxchg16b|iretq|jrcxz|lodsq|movsxd|popf|pushfq)[bswlqt]?\>"
+icolor brightmagenta "\<(rdtscp|scasq|stosq|swapgs)[bswlqt]?\>"
+
+color brightgreen "%(r|e)?(ax|bx|cx|dx|si|di|sp|bp|ip)\>"
+color brightgreen "%(a|b|c|d)(h|l)\>"
+color brightgreen "%(c|s|d|e|f|g)(s)\>"
+
+color brightyellow "(\.section)\s+(\.[A-Za-z0-9_]+?)"
+color brightred "\.(code16|code32|code64)(gcc)?\>"
+color brightred "\.(align|extern|file|globl|global|hidden|org|section|size|type|weak)\>"
+color brightred "\.(ascii|asciz|byte|double|fill|float|hword|int|long|set|short|single|skip|struct|word)\>"
+
+color brightyellow "@([a-z]+?)\>"
+color brightyellow "\<([0-9]+|0x[0-9a-fA-F]+)\>"
+color brightyellow ""(\\.|[^"])*""
+
+color brightblack "(\[|\]|\{|\}|\(|\))"
+color brightblack "(\+|-|\*|/|,|;|:)"
+
+color brightblack "//.*"
+color brightblack "#.*"
+color brightblack start="/\*" end="\*/"
 
 color ,green "[[:space:]]+$"
