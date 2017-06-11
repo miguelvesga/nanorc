@@ -6,7 +6,7 @@ color brightwhite "."
 color brightred "\<[A-Z_]{2,}\>"
 color brightred "\<(__)[A-Za-z0-9_]*\>"
 
-color brightgreen "<[^>]+"
+color brightgreen "<([A-Za-z_0-9]|\s)+>"
 color brightwhite "\<[a-zA-Z_\$][a-zA-Z0-9_\$]*[(]"
 color brightgreen "\<(struct|enum|union)[[:space:]]*[A-Za-z_][A-Za-z0-9_]*\>"
 color brightgreen "::[A-Za-z_][A-Za-z0-9_]*"
@@ -38,7 +38,8 @@ color brightyellow "'([^\\']|\\.)'"
 color brightyellow "'\\[x|u|U](.+)'"
 
 color brightyellow "\"([^\\\"]|\\.)*\""
-color brightyellow "\<([0-9]+|0x[0-9a-fA-F]+)\>"
+color brightyellow "\<(0x[0-9a-fA-F]+)\>"
+color brightyellow "\<[0-9]+(\.[0-9]+)?(e[0-9]+)?\>"
 
 color brightblack start="/\*" end="\*/"
 color brightblack "//.*"
