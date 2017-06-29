@@ -39,7 +39,7 @@ color brightyellow "'\\[x|u|U](.+)'"
 
 color brightyellow "\"([^\\\"]|\\.)*\""
 color brightyellow "\<(0x[0-9a-fA-F]+)\>"
-color brightyellow "\<[0-9]+(\.[0-9]+)?(e[0-9]+)?\>"
+color brightyellow "\<[0-9]+(\.[0-9]+)?([Ee][+-]?[0-9]+)?\>"
 
 color brightblack start="/\*" end="\*/"
 color brightblack "//.*"
