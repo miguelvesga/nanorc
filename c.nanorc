@@ -3,12 +3,13 @@ comment "//"
 
 color brightwhite "."
 
-color brightred "\<[A-Z_]{2,}\>"
+color brightred "\<[A-Z_][A-Z0-9_]+\>"
 color brightred "\<(__)[A-Za-z0-9_]*\>"
 
 color brightgreen "<([A-Za-z_0-9]|\s)+>"
 color brightwhite "\<[a-zA-Z_\$][a-zA-Z0-9_\$]*[(]"
-color brightgreen "\<(struct|enum|union)[[:space:]]*[A-Za-z_][A-Za-z0-9_]*\>"
+color brightgreen "\<(struct|union)[[:space:]]*[A-Za-z_][A-Za-z0-9_]*\>"
+color cyan "\<(enum)[[:space:]]*[A-Za-z_][A-Za-z0-9_]*\>"
 color brightgreen "::[A-Za-z_][A-Za-z0-9_]*"
 color brightwhite "[A-Za-z_][A-Za-z0-9_]*::"
 color brightgreen "\<[a-zA-Z_\$][a-zA-Z0-9_\$]*_t\>"
