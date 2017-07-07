@@ -3,9 +3,6 @@ comment "//"
 
 color brightwhite "."
 
-color brightred "\<[A-Z_][A-Z0-9_]+\>"
-color brightred "\<(__)[A-Za-z0-9_]*\>"
-
 color brightgreen "<([A-Za-z_0-9]|\s)+>"
 color brightwhite "\<[a-zA-Z_\$][a-zA-Z0-9_\$]*[(]"
 color brightgreen "\<(struct|union)[[:space:]]*[A-Za-z_][A-Za-z0-9_]*\>"
@@ -13,9 +10,6 @@ color cyan "\<(enum)[[:space:]]*[A-Za-z_][A-Za-z0-9_]*\>"
 color brightgreen "::[A-Za-z_][A-Za-z0-9_]*"
 color brightwhite "[A-Za-z_][A-Za-z0-9_]*::"
 color brightgreen "\<[a-zA-Z_\$][a-zA-Z0-9_\$]*_t\>"
-
-color brightblack "(\[|\]|\{|\}|\(|\))"
-color brightblack "(\+|-|\*|/|%|=|!|>|<|&|\||~|\^|->|\.|,|\?|:|;)"
 
 color brightmagenta "\<(auto|break|case|char|const|continue|default|do|double|else)\>"
 color brightmagenta "\<(enum|extern|float|for|goto|if|inline|int|long|register)\>"
@@ -31,6 +25,12 @@ color brightmagenta "\<(this|thread_local|throw|true|try|typeid|typename|using|v
 color brightmagenta "\<(final|override)\>"
 
 color brightmagenta "\<(_Bool|_Complex|_Imaginary)\>"
+
+color brightred "\<[A-Z_][A-Z0-9_]+[\(]?"
+color brightred "\<(__)[A-Za-z0-9_]*[\(]?"
+
+color brightblack "(\[|\]|\{|\}|\(|\))"
+color brightblack "(\+|-|\*|/|%|=|!|>|<|&|\||~|\^|->|\.|,|\?|:|;)"
 
 color brightyellow "#[[:space:]]*include[[:space:]]*<(.+?)>"
 color brightred "^[[:space:]]*#[[:space:]]*(if|ifdef|ifndef|elif|else|endif|include|define|undef|line|error|pragma)\>"
