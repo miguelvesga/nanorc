@@ -1,0 +1,36 @@
+syntax "JavaScript" "\.js$"
+
+color brightwhite "."
+
+color magenta "[A-Za-z_][A-Za-z0-9_]*\("
+color brightwhite "\<(function)[[:space:]]+[A-Za-z_][A-Za-z0-9_]*"
+
+color brightmagenta "\<(abstract|arguments|await|boolean)\>"
+color brightmagenta "\<(break|byte|case|catch)\>"
+color brightmagenta "\<(char|class|const|continue)\>"
+color brightmagenta "\<(debugger|default|delete|do)\>"
+color brightmagenta "\<(double|else|enum|eval)\>"
+color brightmagenta "\<(export|extends|false|final)\>"
+color brightmagenta "\<(finally|float|for|function)\>"
+color brightmagenta "\<(goto|if|implements|import)\>"
+color brightmagenta "\<(in|instanceof|int|interface)\>"
+color brightmagenta "\<(let|long|native|new)\>"
+color brightmagenta "\<(null|package|private|protected)\>"
+color brightmagenta "\<(public|return|short|static)\>"
+color brightmagenta "\<(super|switch|synchronized|this)\>"
+color brightmagenta "\<(throw|throws|transient|true)\>"
+color brightmagenta "\<(try|typeof|var|void)\>"
+color brightmagenta "\<(volatile|while|with|yield)\>"
+
+color brightblack "(\[|\]|\{|\}|\(|\))"
+color brightblack "(\+|-|\*|/|%|=|!|>|<|&|;|\.|:|\?|)"
+
+color brightyellow "\<(0x[0-9a-fA-F]+)\>"
+color brightyellow "\<[0-9]+(\.[0-9]+)?\>"
+
+color brightyellow "\"([^\\\"]|\\.)*\""
+color brightyellow "'([^\\']|\\.)*'"
+
+color brightblack start="/\*" end="\*/"
+color brightblack "(^|[[:space:]]+)//.*"
+
