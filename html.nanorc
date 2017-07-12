@@ -1,0 +1,17 @@
+syntax "Html" "\.htm(l)?$"
+
+color brightwhite start="<style" end="</style>"
+
+color brightgreen "<[^>]*>"
+color brightmagenta "<(/)?[A-Za-z_][A-Za-z0-9]*"
+
+color brightblack "(=|/)"
+color brightmagenta "(<(/)?|>)"
+
+color magenta "<!(.+?)>"
+color brightwhite start="<\?" end="\?>"
+
+color brightyellow "\"([^\\\"]|\\.)*\""
+color brightyellow "'([^\\']|\\.)*'"
+
+color brightblack "<!--(.+?)-->"
